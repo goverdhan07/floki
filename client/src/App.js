@@ -8,12 +8,17 @@ import "./App.css";
 class App extends Component {
   constructor(props) {
     super(props)
-    this.state = { storageValue: 0, web3: null, accounts: null, contract: null, buffer: null, ipfsHash: '' };
+    this.state = { 
+      storageValue: 0,
+      web3: null, 
+      accounts: null, 
+      contract: null, 
+      buffer: null, ipfsHash: '' };
     this.captureFile = this.captureFile.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
 
-  
+
   componentDidMount = async () => {
     try {
       // Get network provider and web3 instance.
@@ -42,7 +47,9 @@ class App extends Component {
     }
   };
 
+
   runExample = async () => {
+    
     const { accounts, contract } = this.state;
 
     // Stores a given value, 5 by default.
@@ -54,6 +61,7 @@ class App extends Component {
     // Update state with the result.
     this.setState({ storageValue: response });
   };
+
 
   captureFile(event){
     console.log('capture file ...')
@@ -79,6 +87,9 @@ class App extends Component {
       this.setState({ipfsHash: result[0].hash})
       console.log('ipfsHash', this.state.ipfsHash)
 
+      
+      
+
     })
 
   }
@@ -94,7 +105,7 @@ class App extends Component {
     }
     return (
       <div className="App">
-        <h1>FLOKI - The messenger</h1>
+        <h1>FLOKI - The Carrier</h1>
         <p>This platform helps you share files accross Internet through Blockchain.</p>
         <h2>File to be shared is stored on IPFS and The Ethereum blockchain!!</h2>
         <img src={`https://ipfs.io/ipfs/${this.state.ipfsHash}`} alt="😈"/>
