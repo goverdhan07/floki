@@ -49,7 +49,6 @@ class App extends Component {
 
 
   runExample = async () => {
-    
     const { accounts, contract } = this.state;
 
     // Stores a given value, 5 by default.
@@ -61,7 +60,6 @@ class App extends Component {
     // Update state with the result.
     this.setState({ storageValue: response });
   };
-
 
   captureFile(event){
     console.log('capture file ...')
@@ -84,9 +82,9 @@ class App extends Component {
         console.error(error)
         return
       }
-      this.setState({ipfsHash: result[0].hash})
-      console.log('ipfsHash', this.state.ipfsHash)
-
+      this.setState({ ipfsHash: result[0].hash })
+      console.log('ifpsHash', this.state.ipfsHash)
+      
       
       
 
